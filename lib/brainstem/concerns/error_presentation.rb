@@ -35,11 +35,14 @@ module Brainstem
             when String
               json[:errors] << { :type => 'validation', :field => :base, :message => object }
             else
-              object.errors.each do |attribute, attribute_error|
+              object.errors.each do |error|
+                attribute = error.attribute
+                message = error.message
+
                 json[:errors] << {
                   :type => 'validation',
                   :field => (options[:rewrite_params] || {}).reverse_merge(attribute => attribute).invert[attribute],
-                  :message => brainstem_full_error_message(object, attribute, attribute_error),
+                  :message => brainstem_full_error_message(object, attribute, message),
                   :index => index
                 }
               end

@@ -1,5 +1,4 @@
 require 'active_support/core_ext/hash/except'
-require 'active_support/core_ext/hash/compact'
 require 'active_support/inflector'
 require 'brainstem/api_docs/formatters/abstract_formatter'
 require 'brainstem/api_docs/formatters/open_api_specification/helper'

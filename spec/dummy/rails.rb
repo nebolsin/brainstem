@@ -15,14 +15,14 @@ class Rails
       #
       route_1 = FakeRailsRoute.new(
         "fake_descendant",
-        FakeRailsRoutePathObject.new(spec: '/fake_descendant'),
+        FakeRailsRoutePathObject.new({spec: '/fake_descendant'}),
         { controller: "fake_descendant", action: "show" },
         /^GET|POST$/
       )
 
       route_2 = FakeRailsRoute.new(
         "route_with_no_controller",
-        FakeRailsRoutePathObject.new(spec: '/fake_descendant'),
+        FakeRailsRoutePathObject.new({spec: '/fake_descendant'}),
         { },
         /^PATCH$/
       )
@@ -32,14 +32,14 @@ class Rails
       #
       route_3 = FakeRailsRoute.new(
         "route_with_invalid_controller",
-        FakeRailsRoutePathObject.new(spec: '/fake_descendant'),
+        FakeRailsRoutePathObject.new({spec: '/fake_descendant'}),
         { controller: "invalid_controller", action: "show" },
         'GET'
       )
 
       route_4 = FakeRailsRoute.new(
         "another_fake_descendant",
-        FakeRailsRoutePathObject.new(spec: '/another_fake_descendant'),
+        FakeRailsRoutePathObject.new({spec: '/another_fake_descendant'}),
         { controller: "another_fake_descendant", action: "update" },
         'PUT|PATCH'
       )
@@ -65,14 +65,14 @@ class FakeApiEngine
     @routes ||= begin
       route_1 = FakeRailsRoute.new(
         "fake_descendant",
-        FakeRailsRoutePathObject.new(spec: '/fake_route_1'),
+        FakeRailsRoutePathObject.new({spec: '/fake_route_1'}),
         { controller: "fake_descendant", action: "show" },
         /^PUT|PATCH$/
       )
 
       route_2 = FakeRailsRoute.new(
         "fake_descendant",
-        FakeRailsRoutePathObject.new(spec: '/fake_route_2'),
+        FakeRailsRoutePathObject.new({spec: '/fake_route_2'}),
         { controller: "fake_descendant", action: "show" },
         'PUT|PATCH'
       )
