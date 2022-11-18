@@ -1,3 +1,5 @@
+require 'active_support/core_ext/kernel/reporting'
+
 # This is a dummy file which is used in the Introspector specs to simulate a
 # loaded rails app.
 silence_warnings do
