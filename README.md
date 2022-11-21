@@ -21,7 +21,7 @@ filters, and association loads, allowing for simpler implementations, fewer requ
 * Prevent data duplication by pulling associations into top-level hashes, easily indexable by ID.
 * Easy integration with Backbone.js via [brainstem-js](https://github.com/mavenlink/brainstem-js).  "It's like Ember Data for Backbone.js!"
 
-[Watch our talk about Brainstem from RailsConf 2013](http://www.confreaks.com/videos/2457-railsconf2013-introducing-brainstem-your-companion-for-rich-rails-apis)
+[Watch our talk about Brainstem from RailsConf 2013](https://www.youtube.com/watch?v=MDNbcpHrVJk)
 
 ## Installation
 
@@ -229,10 +229,10 @@ Rails.application.config.to_prepare do
   # Set the current default API namespace.
   Brainstem.default_namespace = :v1
 
-  # (Optional) Utilize MySQL's [FOUND_ROWS()](https://dev.mysql.com/doc/refman/5.7/en/information-functions.html#function_found-rows) 
-  # functionality to avoid issuing a new query to calculate the record count, 
+  # (Optional) Utilize MySQL's [FOUND_ROWS()](https://dev.mysql.com/doc/refman/5.7/en/information-functions.html#function_found-rows)
+  # functionality to avoid issuing a new query to calculate the record count,
   # which has the potential to up to double the response time of the endpoint.
-  Brainstem.mysql_use_calc_found_rows = true 
+  Brainstem.mysql_use_calc_found_rows = true
 
   # (Optional) Load a default base helper into all presenters. You could use
   # this to bring in a concept like `current_user`.  # While not necessarily the
@@ -517,7 +517,7 @@ The configuration for a controller takes place inside the `brainstem_params` blo
 class PostsController < ApiController
   include Brainstem::Concerns::ControllerDSL
 
-  brainstem_params do   
+  brainstem_params do
     title "Posts"
   end
 end
@@ -655,7 +655,7 @@ class BlogPostsController < ApiController
                      info: "the message of the post",
                      required: true
 
-        params.valid :viewable_by, :array,          
+        params.valid :viewable_by, :array,
                      item_type: :integer,
                      info: "an array of user ids that can access the post"
 
@@ -723,14 +723,14 @@ class ContactsController < ApiController
       response :hash do
         field :count, :integer,
               info: "Total count of contacts"
-         
+
         fields :contacts, :array,
                item_type: :hash,
                info: "Array of contact details" do
-          
+
           field :full_name, :string,
                 info: "Full name of the contact"
-            
+
           field :email_address, :string,
                 info: "Email address of the contact"
         end
@@ -744,14 +744,14 @@ class ContactsController < ApiController
 ###### `tag` / `tag_groups`
 
 These are applicable only to the root context.
- 
+
 ```ruby
 brainstem_params do
 
   # The `tag` configuration allows grouping of all endpoints
   # in a controller under the same group
   tag "Adopt a Pet"
-  
+
   # The `tag_group` configuration introduces another level of nesting
   # and allows grouping multiple controllers under a specific group
   tag_groups "Dogs", "Cats"
@@ -765,44 +765,44 @@ Any of these can be used inside an action context.
 ```ruby
 class PetsController < ApiController
   brainstem_params do
-    
+
     # A list of default MIME types, endpoints on this controller can consume.
     consumes "application/xml", "application/json"
 
     # A list of default MIME types, endpoints on this controller can produce.
     produces "application/xml"
-    
+
     # A declaration of which security schemes are applied to endpoints on this controller.
     security []
-    
-    # The default transfer protocols for endpoints on this controller. 
+
+    # The default transfer protocols for endpoints on this controller.
     schemes "https", "http"
-    
+
     # Additional external documentation
     external_doc description: 'External Doc',
                  url: 'www.google.com'
-    
+
     # Declares endpoints on this controller to be deprecated.
     deprecated true
-    
+
     actions :update do
-      
+
       # Overriden MIME types the endpoints can consume.
       consumes "application/json"
-            
+
       # A list of default MIME types the endpoints can produce.
       produces "application/json"
-      
+
       # Security schemes for this endpoint.
       security { "petstore_auth" => [ "write:pets" ] }
-      
+
       # Transfer protocols applicable to this endpoint.
       schemes "https"
-      
+
       # External documentation for the endpoint.
       external_doc description: 'Stock Market News',
                    url: 'www.google.com/finance'
-      
+
       # Overrides the deprecated value set on the root context.
       deprecated false
     end
@@ -818,8 +818,8 @@ The `operation_id` configuration can only be used within an action context.
 class BlogPostsController < ApiController
   brainstem_params do
     actions :show do
-    
-      # Unique string used to identify the operation. 
+
+      # Unique string used to identify the operation.
       operation_id "getBlogByID"
     end
   end

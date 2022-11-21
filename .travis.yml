@@ -4,120 +4,39 @@ dist: trusty
 
 matrix:
   include:
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord4_2.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails.5.2.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails.5.2.gemfile
       env: USE_MYSQL=true
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord4_2.gemfile
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord4_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord4_2.gemfile
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord4_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord4_2.gemfile
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord4_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord4_2.gemfile
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord4_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord4_2.gemfile
 
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord5_0.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails.6.0.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails.6.0.gemfile
       env: USE_MYSQL=true
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord5_0.gemfile
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord5_0.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord5_0.gemfile
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord5_0.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord5_0.gemfile
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord5_0.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord5_0.gemfile
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord5_0.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord5_0.gemfile
 
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord5_1.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails.6.1.gemfile
+    - rvm: 2.7.6
+      gemfile: gemfiles/rails.6.1.gemfile
       env: USE_MYSQL=true
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord5_1.gemfile
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord5_1.gemfile
+    - rvm: 3.0.4
+      gemfile: gemfiles/rails.6.1.gemfile
+    - rvm: 3.0.4
+      gemfile: gemfiles/rails6.1.gemfile
       env: USE_MYSQL=true
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord5_1.gemfile
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord5_1.gemfile
+    - rvm: 3.1.2
+      gemfile: gemfiles/rails.6.1.gemfile
+    - rvm: 3.1.2
+      gemfile: gemfiles/rails.6.1.gemfile
       env: USE_MYSQL=true
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord5_1.gemfile
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord5_1.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord5_1.gemfile
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord5_1.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord5_1.gemfile
 
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord5_2.gemfile
+    - rvm: 3.1.2
+      gemfile: gemfiles/rails.7.0.gemfile
       env: USE_MYSQL=true
-    - rvm: 2.3.3
-      gemfile: gemfiles/activerecord5_2.gemfile
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord5_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.3.8
-      gemfile: gemfiles/activerecord5_2.gemfile
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord5_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.4.9
-      gemfile: gemfiles/activerecord5_2.gemfile
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord5_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord5_2.gemfile
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord5_2.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord5_2.gemfile
-
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord6_0.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.5.7
-      gemfile: gemfiles/activerecord6_0.gemfile
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord6_0.gemfile
-      env: USE_MYSQL=true
-    - rvm: 2.6.5
-      gemfile: gemfiles/activerecord6_0.gemfile
+    - rvm: 3.1.2
+      gemfile: gemfiles/rails.7.0.gemfile
 
 services:
   - mysql
