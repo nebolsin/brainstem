@@ -19,19 +19,6 @@ Gem::Specification.new do |gem|
 
   gem.executables   << 'brainstem'
 
-  gem.add_dependency "activerecord", ">= 4.2"
-  gem.add_dependency "activesupport", ">= 4.2"
-
-  gem.add_development_dependency "rake"
-  gem.add_development_dependency "redcarpet" # for markdown in yard
-  gem.add_development_dependency "rr"
-  gem.add_development_dependency "rspec", "~> 3.9"
-  gem.add_development_dependency "sqlite3"
-  gem.add_development_dependency "mysql2", "0.4.10"
-  gem.add_development_dependency "database_cleaner"
-  gem.add_development_dependency "yard"
-  gem.add_development_dependency "pry"
-  gem.add_development_dependency "pry-nav"
-  gem.add_development_dependency "db-query-matchers"
-  gem.add_development_dependency 'actionpack'
+  gem.add_dependency "activerecord", ">= 4.2", "< 8.0"
+  gem.add_dependency "activesupport", ">= 4.2", "< 8.0"
 end

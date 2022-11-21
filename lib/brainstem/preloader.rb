@@ -67,7 +67,11 @@ module Brainstem
     # @return [Proc] A callable proc
     def preload_method
       @preload_method ||= begin
-        if Gem.loaded_specs['activerecord'].version >= Gem::Version.create('4.1')
+        if Gem.loaded_specs['activerecord'].version > Gem::Version.create('7.0')
+          Proc.new do |models, association_names|
+            ActiveRecord::Associations::Preloader.new(records: models, associations: association_names).call
+          end
+        elsif Gem.loaded_specs['activerecord'].version >= Gem::Version.create('4.1')
           ActiveRecord::Associations::Preloader.new.method(:preload)
         else
           Proc.new do |models, association_names|
